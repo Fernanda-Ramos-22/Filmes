@@ -1,18 +1,47 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { FooterComponent } from './components/footer/footer.component';
+import { ReadAllComponent } from './components/read-all/read-all.component';
+import { FilmesService } from './services/filmes.service';
+import { HeaderComponent } from './components/header/header.component';
+import {MatExpansionModule} from '@angular/material/expansion';
+import { GenerosComponent } from './components/generos/generos.component';
+import { DetalhesComponent } from './components/detalhes/detalhes.component';
+import {MatCardModule} from '@angular/material/card';
+
+
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FooterComponent,
+    ReadAllComponent,
+    HeaderComponent,
+    GenerosComponent,
+    DetalhesComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    HttpClientModule,
+    MatExpansionModule,
+    MatCardModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    FilmesService,
+    HttpClientModule
+
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
