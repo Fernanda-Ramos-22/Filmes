@@ -9,31 +9,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 </head>
 
-
-
 <main>
-
   <section class="container">
-      <img
-        loading="lazy"
-        class="poster"
-        alt="HTML5"
-        src="{{ patch }}{{ lista?.poster_path }}"
+    <img
+      loading="lazy"
+      class="poster"
+      alt="HTML5"
+      src="{{ patch }}{{ lista?.poster_path }}"
     />
 
     <section class="content">
       <header>
         <h2>{{ lista.title }}</h2>
-        <h3>{{ lista.release_date }}</h3>
+        <h3>{{ lista.release_date | date: "shortDate" }}</h3>
         <div *ngFor="let item of lista.genres">
           <div class="generos">{{ item.name }}</div>
         </div>
       </header>
 
       <p>{{ lista.overview }}</p>
-      <p>{{ lista.vote_average }}</p>
     </section>
   </section>
 </main>
-
-

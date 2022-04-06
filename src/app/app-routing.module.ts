@@ -6,29 +6,23 @@ import { ReadAllComponent } from './components/read-all/read-all.component';
 
 const routes: Routes = [
   {
-    path:'',
-    component: ReadAllComponent
-
+    path: '',
+    component: ReadAllComponent,
   },
 
   {
-    path:'generos/:idgenero',
-    component: GenerosComponent
-
+    path: 'generos/:idgenero',
+    component: GenerosComponent,
   },
 
   {
-    path:'detalhes/:idfilmes',
-    component: DetalhesComponent
-  }
-
-  
- 
-
+    path: 'detalhes/:idfilmes',
+    component: DetalhesComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

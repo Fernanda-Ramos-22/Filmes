@@ -4,17 +4,13 @@ import {
   HttpClient,
   HttpErrorResponse,
   HttpHeaders,
-  
 } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IlistaGeneros } from '../models/generos';
-;
-
 @Injectable({
   providedIn: 'root',
 })
 export class FilmesService {
-
   regiao = '&region=BR';
   language = '&language=pt-BR';
   baseUrl = 'https://api.themoviedb.org/3';
@@ -29,21 +25,26 @@ export class FilmesService {
 
   //metodo obter filmes
   getFilmes(): Observable<any> {
-    const url = `${this.baseUrl}/movie/popular${this.apiKey}${this.language}${this.regiao}`
-    return this.httpClient.get<any>(url).pipe(retry(2), catchError(this.handleError));
+    const url = `${this.baseUrl}/movie/popular${this.apiKey}${this.language}${this.regiao}`;
+    return this.httpClient
+      .get<any>(url)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   //metodo obter lista por generos
   getFilmesGenero(idgenero: string): Observable<any> {
-    const url2 = `${this.baseUrl}/genre/${idgenero}/movies${this.apiKey}${this.language}${this.regiao}`
-    return this.httpClient.get<any>(url2).pipe(retry(2), catchError(this.handleError));
+    const url2 = `${this.baseUrl}/genre/${idgenero}/movies${this.apiKey}${this.language}${this.regiao}`;
+    return this.httpClient
+      .get<any>(url2)
+      .pipe(retry(2), catchError(this.handleError));
   }
-
 
   //metodo filme detalhes
   getDetalhes(idfilmes: string): Observable<Filmes[]> {
-    const url3 = `${this.baseUrl}/movie/${idfilmes}${this.apiKey}${this.language}${this.regiao}`
-    return this.httpClient.get<any>(url3).pipe(retry(2), catchError(this.handleError));
+    const url3 = `${this.baseUrl}/movie/${idfilmes}${this.apiKey}${this.language}${this.regiao}`;
+    return this.httpClient
+      .get<any>(url3)
+      .pipe(retry(2), catchError(this.handleError));
   }
 
   //erros

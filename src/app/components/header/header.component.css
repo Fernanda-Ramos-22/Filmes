@@ -1,14 +1,10 @@
-
-
-html{
+html {
   width: vw 100%;
-  
-  width: 100%;
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
-  
 
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }
 
 header {
@@ -43,7 +39,7 @@ img {
   margin-top: 1rem;
   width: 28px;
   height: 26px;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
   border: 1px solid #fff;

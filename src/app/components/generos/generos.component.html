@@ -69,7 +69,7 @@
       <div *ngFor="let item of lista">
         <div class="card">
           <div class="card-image">
-            <a routerLink="detalhes/{{ item.id }}">
+            <a routerLink="/detalhes/{{ item.id }}">
               <img
                 loading="lazy"
                 class="poster"
@@ -77,11 +77,11 @@
               />
             </a>
           </div>
-          <a routerLink="detalhes/{{ item.id }}">
+          <a routerLink="/detalhes/{{ item.id }}">
             <h2>{{ item.title }}</h2>
           </a>
           <p>
-            {{ item.release_date }}
+            {{ item.release_date | date: "shortDate" }}
           </p>
         </div>
       </div>

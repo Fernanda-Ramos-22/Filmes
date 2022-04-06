@@ -1,7 +1,6 @@
 body {
   width: 100%;
 }
-/*pesquisar onde está a margem que sobra*/
 
 main {
   display: flex;
@@ -93,4 +92,5 @@ h2:hover {
 
 p {
   margin-left: 1rem;
+  
 }

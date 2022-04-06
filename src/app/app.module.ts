@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -10,13 +10,15 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ReadAllComponent } from './components/read-all/read-all.component';
 import { FilmesService } from './services/filmes.service';
 import { HeaderComponent } from './components/header/header.component';
-import {MatExpansionModule} from '@angular/material/expansion';
+import { MatExpansionModule } from '@angular/material/expansion';
 import { GenerosComponent } from './components/generos/generos.component';
 import { DetalhesComponent } from './components/detalhes/detalhes.component';
-import {MatCardModule} from '@angular/material/card';
+import { MatCardModule } from '@angular/material/card';
 
+import { registerLocaleData } from '@angular/common';
+import localePt from '@angular/common/locales/pt';
 
-
+registerLocaleData(localePt);
 
 @NgModule({
   declarations: [
@@ -26,7 +28,6 @@ import {MatCardModule} from '@angular/material/card';
     HeaderComponent,
     GenerosComponent,
     DetalhesComponent,
-
   ],
   imports: [
     BrowserModule,
@@ -35,12 +36,12 @@ import {MatCardModule} from '@angular/material/card';
     MatToolbarModule,
     HttpClientModule,
     MatExpansionModule,
-    MatCardModule
+    MatCardModule,
   ],
   providers: [
     FilmesService,
-    HttpClientModule
-
+    HttpClientModule,
+    { provide: LOCALE_ID, useValue: 'pt-BR' },
   ],
   bootstrap: [AppComponent],
 })
