@@ -20,13 +20,16 @@
 
     <section class="content">
       <header>
-        <h2>{{ lista.title }}</h2>
-        <h3>{{ lista.release_date | date: "shortDate" }}</h3>
+        <h1>{{ lista.title }}</h1>
+        <h2>
+          {{ lista.release_date | date: "shortDate" }} - Avaliação dos usuários:
+          {{ lista.vote_average * 10 }}%
+        </h2>
         <div *ngFor="let item of lista.genres">
           <div class="generos">{{ item.name }}</div>
         </div>
       </header>
-
+      <h3>Sinopse</h3>
       <p>{{ lista.overview }}</p>
     </section>
   </section>
